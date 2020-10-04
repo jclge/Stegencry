@@ -2,6 +2,8 @@
 
 Stegencry is an image encryption software. Its name is a portmanteau that comes from steg.anography & encry.ption
 
+![alt text](https://github.com/jclge/Stegencry/blob/master/stegencry.png?raw=true)
+
 ## Installation
 
 The project is currently not packaged (as you can tell from the architecture of the repo).
