@@ -1,0 +1,16 @@
+Julien Calenge © 2021
+
+STEGENCRY LICENSE
+
+1 - You can use this library in any project without any time or quantity limitation.
+
+2 - You don't have to link this license or the project in the documentation of yours (but it would be highly appreciated).
+
+3 - You are allowed to sell a project including this library.
+
+4 - You are not allowed to resell or re-distribute this library without any major modification.
+
+5 - Finally, you're not allowed to use this library (as an individual) to encrypt images that could cause harm to others human beings. Including but not limited to:
+    - Terrorism
+    - Illegal pornography (Revenge, Child, etc.)
+While there is no backdoor on this project, I'll help any police organization trying to decrypt an image encrypted with Stegencry to transfer images used for thoses purposes.
