@@ -20,6 +20,4 @@ options: merge / unmerge
 Pull requests are not currently welcome but you can still send me your feedback by sending me an e-mail.
 
 ## License
-Copyright © Julien Calenge 2020
-
-Until I write my own license due to the potential excesses that image security/encryption could include.
+Custom Stegencry License
