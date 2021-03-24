@@ -1,0 +1,1 @@
+from Stegencry.main import encrypt, decrypt
