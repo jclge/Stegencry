@@ -1,1 +1,2 @@
-from Stegencry.main import encrypt, decrypt
+from decrypt import decrypt
+from encrypt import encrypt
