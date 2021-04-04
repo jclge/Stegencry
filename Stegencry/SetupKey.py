@@ -8,7 +8,7 @@
 #╠═══ Description: SetupKey Class          ║
 #╚═════════════════════════════════════════╝
 
-from exception_management import InvalidFileException, SmallerSlaveException, OutputNotSetException, MasterNotSetException, NoKeyException, KeyBadFormatException
+from Stegencry.exception_management import InvalidFileException, SmallerSlaveException, OutputNotSetException, MasterNotSetException, NoKeyException, KeyBadFormatException
 from random import randint
 import Crypto.Util.number
 

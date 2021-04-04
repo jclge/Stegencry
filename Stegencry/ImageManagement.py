@@ -10,8 +10,8 @@
 
 from PIL import Image, ImageDraw
 from copy import deepcopy
-from ImageGenerator import ImageGenerator
-from exception_management import InvalidFileException, SmallerSlaveException, OutputNotSetException, MasterNotSetException, NoKeyException, KeyBadFormatException
+from Stegencry.ImageGenerator import ImageGenerator
+from Stegencry.exception_management import InvalidFileException, SmallerSlaveException, OutputNotSetException, MasterNotSetException, NoKeyException, KeyBadFormatException
 
 class ImageManagement:
     def __init__(self):
@@ -32,10 +32,14 @@ class ImageManagement:
     def __get_pixels(self):
         self.__pixels = list(self.__image.getdata())
 
-    def create(self, mode="RGB", size=[1, 1], supplement="#FFFFFF"):
+    def create(self, mode="RGB", size=[1, 1], supplement=None):
         try:
-            self.__image = Image.new(mode, size)
-            self.__get_map()
+            if (supplement == None):
+                self.__image = Image.new(mode, size)
+                self.__get_map()
+            else:
+                self.__image = Image.new(mode, size, supplement)
+                self.__get_map()
         except Exception as e:
             raise InvalidFileException(e)
 
@@ -86,5 +90,4 @@ class ImageManagement:
     def generate_image(self, master):
         gen = ImageGenerator(master, self.__image)
         self.__image = Image.fromarray(gen.generate())
-        self.__image.show()
         self.__get_map()

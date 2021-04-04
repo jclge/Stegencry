@@ -8,10 +8,10 @@
 #╠═══ Description: encrypt Class           ║
 #╚═════════════════════════════════════════╝
 
-from main import Stegencry
-from exception_management import InvalidFileException, SmallerSlaveException, OutputNotSetException, MasterNotSetException, NoKeyException, KeyBadFormatException
+from Stegencry.main import Stegencry
+from Stegencry.exception_management import InvalidFileException, SmallerSlaveException, OutputNotSetException, MasterNotSetException, NoKeyException, KeyBadFormatException
 from random import randint, shuffle, seed
-from ImageManagement import ImageManagement
+from Stegencry.ImageManagement import ImageManagement
 from copy import deepcopy
 
 class encrypt(Stegencry):

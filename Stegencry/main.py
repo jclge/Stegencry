@@ -8,10 +8,10 @@
 #╠═══ Description: Stegencry Class         ║
 #╚═════════════════════════════════════════╝
 
-from exception_management import InvalidFileException, SmallerSlaveException, OutputNotSetException, MasterNotSetException, NoKeyException, KeyBadFormatException
+from Stegencry.exception_management import InvalidFileException, SmallerSlaveException, OutputNotSetException, MasterNotSetException, NoKeyException, KeyBadFormatException
 from random import randint
-from SetupKey import SetupKey
-from ImageManagement import ImageManagement
+from Stegencry.SetupKey import SetupKey
+from Stegencry.ImageManagement import ImageManagement
 
 class Stegencry(SetupKey):
     def __init__(self, master=None, output=None, key=None, slave=None):
