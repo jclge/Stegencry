@@ -22,8 +22,17 @@ class SetupKey:
         if (self.__key == None):
             return (None, None, None, None)
         else:
-            self.__check_key_integrity()
-            return (self.__get_key_elements())
+            if (self.__check_key_integrity() == True):
+                return(self.__get_password_elements())
+            else:
+                return (self.__get_key_elements())
+
+    def __get_password_elements(self):
+        password = [char for char in self.__key]
+        rgb_seed = ""
+        for element in password:
+            rgb_seed += str(ord(element))
+        return (self.__key, (int(rgb_seed) * int(rgb_seed[1])), ((int(rgb_seed[0]) + int(rgb_seed[2]) + int(rgb_seed[4])) % 9), (int(rgb_seed[::-1]) * int(rgb_seed[0])))
 
     def __split_key_elements(self):
         res = []
@@ -53,10 +62,13 @@ class SetupKey:
     def __check_key_integrity(self):
         if (type(self.__key) != str):
             raise KeyBadFormatException
-        if (len(self.__key) != 1540 or
+        elif (len(self.__key) < 100 and len(self.__key) > 4):
+            return True
+        elif (len(self.__key) != 1540 or
         self.__key[len(self.__key) - 1] != '=' or
         self.__key[514] not in self.__alphabet):
             raise KeyBadFormatException
+        return False
 
     def __generate_prime_key(self, bits):
         p = Crypto.Util.number.getPrime(bits, randfunc=Crypto.Random.get_random_bytes)
